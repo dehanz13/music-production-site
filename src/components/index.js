@@ -1,6 +1,6 @@
 import React from "react";
 
-import Hero from "./Hero";
+import Hero from "./Home/Hero";
 
 const Home = () => {
   return (

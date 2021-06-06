@@ -1,23 +1,14 @@
 import React, { useEffect, useState } from "react";
-import {
-  IconButton,
-  Toolbar,
-  Collapse,
-  Typography,
-  Fab,
-  Box,
-  Grid,
-  Avatar,
-  Paper,
-} from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 // import { Link as Scroll } from "react-scroll";
 import { KeyboardArrowUp } from "@material-ui/icons";
 
-import avatar from "../../images/images/gale.jpeg";
-import BackgroundImage from "../../images/images/production1.jpg";
+import avatar from "../../images/gale.jpeg";
+import BackgroundImage from "../../images/production1.jpg";
 import HeroContent from "./HeroContent";
+import Youtube from "../Youtube";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -142,6 +133,10 @@ const Hero = () => {
       <Paper className={classes.heroContainer}>
         <HeroContent />
       </Paper>
+      <div>
+        <h1></h1>
+      </div>
+      {/* <Youtube /> */}
     </div>
   );
 };
