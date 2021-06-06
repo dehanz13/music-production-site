@@ -75,11 +75,11 @@ const About = () => {
             </Grid>
             <Grid item xs={10}>
               <Box
-              // display="flex"
-              // width="100%"
-              // textAlign="center"
-              // alignItems="center"
-              // m="0"
+                display="flex"
+                width="100%"
+                textAlign="center"
+                alignItems="center"
+                m="0"
               >
                 <p className={classes.titleText}>
                   Certified-Platinum Music Producer, Mixer, and Mastering

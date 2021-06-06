@@ -1,4 +1,13 @@
 import React from "react";
+import {
+  TextField,
+  Typography,
+  Button,
+  Grid,
+  Box,
+  CssBaseline,
+  Container,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Route, Switch } from "react-router-dom";
 
@@ -30,6 +39,7 @@ function App() {
   const classes = useStyles();
   return (
     <React.Fragment>
+      <CssBaseline />
       <div className={classes.root}>
         <Layout>
           <Switch>

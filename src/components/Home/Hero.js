@@ -9,6 +9,7 @@ import avatar from "../../images/gale.jpeg";
 import BackgroundImage from "../../images/production1.jpg";
 import HeroContent from "./HeroContent";
 import Youtube from "../Youtube";
+import Newsletter from "../Newsletter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -137,6 +138,7 @@ const Hero = () => {
         <h1></h1>
       </div>
       {/* <Youtube /> */}
+      <Newsletter />
     </div>
   );
 };
