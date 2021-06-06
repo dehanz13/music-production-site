@@ -1,7 +1,7 @@
 import React from "react";
 
-const Hero = () => {
+const Discover = () => {
   return <div></div>;
 };
 
-export default Hero;
+export default Discover;

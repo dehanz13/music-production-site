@@ -17,9 +17,10 @@ import "./index.css";
 const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
+    // maxWidth: "100vh",
     // maxWidth: '100vw',
     // backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/bg2.jpg'})`,
-    backgroundColor: "#3AAFA9",
+    backgroundColor: "#000000",
     // backgroundRepeat: "no-repeat",
     // backgroundSize: "cover",
   },

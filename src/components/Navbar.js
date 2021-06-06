@@ -15,6 +15,7 @@ import {
   Divider,
   makeStyles,
   Hidden,
+  Typography,
 } from "@material-ui/core";
 import {
   AssignmentInd,
@@ -24,12 +25,15 @@ import {
   Menu,
 } from "@material-ui/icons";
 
+import avatar from "../images/gale.jpeg";
+
 const useStyles = makeStyles((theme) => ({
   appbar: {
     // background: '#222',
     margin: 0,
     background: "none",
-    fontFamily: "Nunito",
+    // fontFamily: "Nunito",
+    textTransform: "uppercase",
   },
   appbarTitle: {
     flexGrow: "1",
@@ -43,9 +47,18 @@ const useStyles = makeStyles((theme) => ({
   },
   colorText: {
     // color: '#5ADD3D',
-    color: "#FEFFFF",
+    color: "#FFFFFF",
     fontFamily: "Nunito",
     variant: "body2",
+
+    fontWeight: 800,
+  },
+  navItemText: {
+    color: "#FFFFFF",
+    fontFamily: "Roboto",
+    variant: "body2",
+
+    fontWeight: 800,
   },
   navDisplayFlex: {
     display: "flex",
@@ -93,11 +106,11 @@ const Navbar = () => {
 
   return (
     <React.Fragment>
-      <AppBar position="fixed sticky" className={classes.appbar} elevation={0}>
+      <AppBar position="fixed sticky" className={classes.appbar} elevation={1}>
         <Toolbar className={classes.appbarWrapper}>
           <Container className={classes.navDisplayFlex}>
             <Link className={classes.appbarTitle} to="/">
-              <h1 className={classes.colorText}>Glen Nanlohy</h1>
+              <h1 className={classes.colorText}>GN.</h1>
             </Link>
             <List
               component="nav"
@@ -108,11 +121,18 @@ const Navbar = () => {
                 <ListItem
                   button
                   key={i}
-                  className={classes.colorText}
+                  className={classes.navItemText}
                   component={Link}
                   to={item.listPath}
                 >
-                  <ListItemText primary={item.listText} />
+                  <Typography component="div">
+                    <ListItemText
+                      primary={item.listText}
+                      fontWeight="fontWeightBold"
+                      m={1}
+                    />
+                  </Typography>
+                  {/* <ListItemText primary={item.listText} /> */}
                 </ListItem>
               ))}
             </List>

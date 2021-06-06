@@ -1,11 +1,11 @@
 import React from "react";
 
+import Hero from "./Hero";
+
 const Home = () => {
   return (
     <React.Fragment>
-      <div>
-        <h1>HOME PAGE</h1>
-      </div>
+      <Hero />
     </React.Fragment>
   );
 };
