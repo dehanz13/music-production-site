@@ -5,20 +5,25 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 // import { Link as Scroll } from "react-scroll";
 import { KeyboardArrowUp } from "@material-ui/icons";
 
-import avatar from "../../images/gale.jpeg";
-import BackgroundImage from "../../images/production1.jpg";
+import avatar from "../../assets/gale.jpeg";
+import BackgroundImage from "../../assets/production1.jpg";
 import HeroContent from "./HeroContent";
 import Youtube from "../Youtube";
 import Newsletter from "../Newsletter";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "flex",
+    // display: "flex",
+    backgroundImage: `url(${BackgroundImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundAttachment: "fixed",
+    backgroundRepeat: "no-repeat",
     justifyContent: "center",
     alignItems: "center",
     height: "100vh",
-    fontFamily: "Nunito",
-    textDecoration: "none",
+    // fontFamily: "Nunito",
+    // textDecoration: "none",
   },
   appbar: {
     background: "none",
@@ -100,7 +105,6 @@ const useStyles = makeStyles((theme) => ({
   paperContainer: {
     backgroundImage: `url(${BackgroundImage})`,
     minHeight: "100vh",
-    // height: 1356,
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -109,16 +113,18 @@ const useStyles = makeStyles((theme) => ({
   heroContainer: {
     minHeight: "100vh",
     backgroundImage: `url(${BackgroundImage})`,
+    // backgroundImage: `url(${
+    //   process.env.PUBLIC_URL + "/assets/production1.jpg"
+    // })`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundAttachment: "fixed",
     backgroundRepeat: "no-repeat",
     width: "100%",
-    // width: `calc(100vw)`,
     margin: "0 auto",
     padding: 10,
-    // justifyContent: "center",
-    // alignItems: "center",
+    justifyContent: "center",
+    alignItems: "center",
     textAlign: "center",
   },
 }));
@@ -134,11 +140,8 @@ const Hero = () => {
       <Paper className={classes.heroContainer}>
         <HeroContent />
       </Paper>
-      <div>
-        <h1></h1>
-      </div>
       {/* <Youtube /> */}
-      <Newsletter />
+      {/* <Newsletter /> */}
     </div>
   );
 };

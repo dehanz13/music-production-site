@@ -25,7 +25,7 @@ import {
   Menu,
 } from "@material-ui/icons";
 
-import avatar from "../images/gale.jpeg";
+import avatar from "../assets/gale.jpeg";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -106,37 +106,37 @@ const Navbar = () => {
 
   return (
     <React.Fragment>
-      <AppBar position="fixed sticky" className={classes.appbar} elevation={1}>
+      <AppBar position="fixed sticky" className={classes.appbar} elevation={12}>
         <Toolbar className={classes.appbarWrapper}>
-          <Container className={classes.navDisplayFlex}>
-            <Link className={classes.appbarTitle} to="/">
-              <h1 className={classes.colorText}>GN.</h1>
-            </Link>
-            <List
-              component="nav"
-              aria-labelledby="main-navigation"
-              className={classes.navDisplayFlex}
-            >
-              {navbarItems.map((item, i) => (
-                <ListItem
-                  button
-                  key={i}
-                  className={classes.navItemText}
-                  component={Link}
-                  to={item.listPath}
-                >
-                  <Typography component="div">
-                    <ListItemText
-                      primary={item.listText}
-                      fontWeight="fontWeightBold"
-                      m={1}
-                    />
-                  </Typography>
-                  {/* <ListItemText primary={item.listText} /> */}
-                </ListItem>
-              ))}
-            </List>
-          </Container>
+          <Link className={classes.appbarTitle} to="/">
+            <h1 className={classes.colorText}>GN.</h1>
+          </Link>
+          {/* <Container className={classes.navDisplayFlex}> */}
+          <List
+            component="nav"
+            aria-labelledby="main-navigation"
+            className={classes.navDisplayFlex}
+          >
+            {navbarItems.map((item, i) => (
+              <ListItem
+                button
+                key={i}
+                className={classes.navItemText}
+                component={Link}
+                to={item.listPath}
+              >
+                <Typography component="div">
+                  <ListItemText
+                    primary={item.listText}
+                    fontWeight="fontWeightBold"
+                    m={1}
+                  />
+                </Typography>
+                {/* <ListItemText primary={item.listText} /> */}
+              </ListItem>
+            ))}
+          </List>
+          {/* </Container> */}
         </Toolbar>
       </AppBar>
     </React.Fragment>

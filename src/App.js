@@ -22,6 +22,7 @@ import Contact from "./components/Contact";
 import Layout from "./components/layout";
 // import './App.css';
 import "./index.css";
+import BackgroundImage from "./assets/production1.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,9 +30,10 @@ const useStyles = makeStyles((theme) => ({
     // maxWidth: "100vh",
     // maxWidth: '100vw',
     // backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/bg2.jpg'})`,
+    // backgroundImage: `url(${BackgroundImage})`,
     backgroundColor: "#000000",
-    // backgroundRepeat: "no-repeat",
-    // backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
   },
 }));
 
@@ -39,8 +41,8 @@ function App() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <CssBaseline />
       <div className={classes.root}>
+        <CssBaseline />
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
