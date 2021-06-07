@@ -22,16 +22,45 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(60),
     height: theme.spacing(60),
   },
+  content: {
+    padding: 50,
+  },
+  paperImg: {
+    minHeight: "35vh",
+    backgroundImage: `url(${avatar1})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    width: "50%",
+    margin: "auto",
+  },
 }));
 
 const AboutContent = () => {
   const classes = useStyles();
   return (
     <Grid container>
-      <Grid item xs className={classes.gridItem}>
-        <Avatar src={avatar1} className={classes.avatarSize}></Avatar>
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={6}
+        xl={6}
+        className={classes.gridItem}
+      >
+        {/* <Avatar src={avatar1} className={classes.avatarSize}></Avatar> */}
+        <Paper className={classes.paperImg}></Paper>
       </Grid>
-      <Grid item xs>
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={6}
+        xl={6}
+        className={classes.content}
+      >
         <Typography variant="subtitle1">
           Certified-Platinum Music Producer, Mixer, and Mastering Engineer with
           credits from every major label and over 200 million streams on
