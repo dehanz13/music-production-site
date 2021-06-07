@@ -8,9 +8,18 @@ import {
   Container,
   Card,
   CardContent,
+  CardHeader,
+  CardMedia,
+  CardActions,
+  Collapse,
+  IconButton,
   Paper,
   Avatar,
 } from "@material-ui/core";
+import { red } from "@material-ui/core/colors";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ShareIcon from "@material-ui/icons/Share";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import PauseCircleFilledIcon from "@material-ui/icons/PauseCircleFilled";
 import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
@@ -21,6 +30,9 @@ import VolumeUpIcon from "@material-ui/icons/VolumeUp";
 import VolumeMuteIcon from "@material-ui/icons/VolumeMute";
 import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 import QueueMusicIcon from "@material-ui/icons/QueueMusic";
+import ShuffleIcon from "@material-ui/icons/Shuffle";
+import RepeatIcon from "@material-ui/icons/Repeat";
+import RepeatOneIcon from "@material-ui/icons/RepeatOne";
 
 // import song1 from "../../assets/songs/Drowning.mp3";
 // import song2 from "../../assets/songs/Edge.mp3";
@@ -60,53 +72,74 @@ const useStyles = makeStyles((theme) => ({
     // marginBottom: 100,
     // maxHeight: "100vh",
   },
+  root: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 0,
+    paddingTop: "56.25%", // 16:9
+  },
+  expand: {
+    transform: "rotate(0deg)",
+    marginLeft: "auto",
+    transition: theme.transitions.create("transform", {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  expandOpen: {
+    transform: "rotate(180deg)",
+  },
+  avatar: {
+    backgroundColor: red[500],
+  },
+  playbarContainer: {
+    justifyContent: "center",
+    justify: "center",
+    alignItems: "center",
+    textAlign: "center",
+  },
+  sidebutton: {
+    fontSize: 20,
+  },
+  playbutton: {
+    fontSize: 50,
+  },
+  nextPrevButton: {
+    fontSize: 40,
+  },
 }));
-
-const songs = [
-  "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Kai_Engel/Satin/Kai_Engel_-_09_-_Homeroad.mp3",
-  "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Kai_Engel/Satin/Kai_Engel_-_07_-_Interception.mp3",
-  "https://files.freemusicarchive.org/storage-freemusicarchive-org/music/ccCommunity/Kai_Engel/Satin/Kai_Engel_-_04_-_Sentinel.mp3",
-];
 
 const useMultiAudio = (urls) => {
   const [sources] = useState(
-    urls.map(({ title, source, artwork }, i) => {
+    urls.map(({ title, album, cover, source, artist, genre, group }, i) => {
       // console.log("IN FUNCTION = ", urls[i].source);
       return {
         title,
+        genre,
+        group,
+        album,
+        cover,
         source,
-        artwork,
+        artist,
         audio: new Audio(source),
       };
     })
   );
   const [players, setPlayers] = useState(
-    urls.map(({ title, source, artwork }, i) => {
+    urls.map(({ title, album, cover, source, artist, genre, group }, i) => {
       // console.log("IN FUNCTION 2 = ", title);
       return {
         title,
+        genre,
+        group,
+        album,
+        cover,
         source,
-        artwork,
+        artist,
         playing: false,
       };
     })
   );
-  // const [sources] = useState(
-  //   urls.map((url) => {
-  //     return {
-  //       url,
-  //       audio: new Audio(url),
-  //     };
-  //   })
-  // );
-  // const [players, setPlayers] = useState(
-  //   urls.map((url) => {
-  //     return {
-  //       url,
-  //       playing: false,
-  //     };
-  //   })
-  // );
   const toggle = (targetIndex) => () => {
     const newPlayers = [...players];
     const currentIndex = players.findIndex((p) => p.playing === true);
@@ -148,16 +181,70 @@ const useMultiAudio = (urls) => {
   return [players, toggle];
 };
 
-const Player = ({ player, toggle }) => (
-  <div>
-    <p>Stream URL: {player.title}</p>
-    <button onClick={toggle}>{player.playing ? "Pause" : "Play"}</button>
-  </div>
-);
+const Player = ({ player, toggle }) => {
+  const classes = useStyles();
+  return (
+    <Card className={classes.root}>
+      <CardHeader
+        avatar={
+          <Avatar
+            src={player.artist}
+            aria-label="song title"
+            className={classes.avatar}
+            // style={{ backgroundImage: `url(${player.artist})` }}
+          >
+            {/* <img src={player.artist} /> */}
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="favorite">
+            <FavoriteIcon />
+          </IconButton>
+        }
+        title={player.album}
+      />
+      <CardMedia
+        className={classes.media}
+        image={player.cover}
+        title={player.title}
+      />
+      <CardContent>
+        <Typography variant="h5" color="textPrimary" component="p">
+          {player.title}
+        </Typography>
+        <Typography variant="body1" color="textSecondary" component="p">
+          {player.group}
+        </Typography>
+        <Typography variant="subtitle1" color="textSecondary" component="p">
+          {player.genre}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing className={classes.playbarContainer}>
+        <IconButton aria-label="Shuffle Tracks">
+          <ShuffleIcon className={classes.sidebutton} />
+        </IconButton>
+        <IconButton aria-label="Previous Track">
+          <SkipPreviousIcon className={classes.nextPrevButton} />
+        </IconButton>
+        <IconButton aria-label="Play/Pause" onClick={toggle}>
+          {player.playing ? (
+            <PauseCircleFilledIcon className={classes.playbutton} />
+          ) : (
+            <PlayCircleFilledIcon className={classes.playbutton} />
+          )}
+        </IconButton>
+        <IconButton aria-label="Next Track">
+          <SkipNextIcon className={classes.nextPrevButton} />
+        </IconButton>
+        <IconButton aria-label="Repeat Track">
+          <RepeatIcon className={classes.sidebutton} />
+        </IconButton>
+      </CardActions>
+    </Card>
+  );
+};
 const AudioPlayer = () => {
   const classes = useStyles();
-  const urls = [...songs];
-  // const urls = [...songsArr];
   const songsList = [...songsArr];
   const [players, toggle] = useMultiAudio(songsList);
   // console.log("SONGS = ", songsList[0].artwork);
@@ -170,18 +257,8 @@ const AudioPlayer = () => {
               <Typography variant="h4">Check out my music!</Typography>
             </Box>
             <Box>
-              {/* {players.map((player, i) => (
-                <Player key={i} player={player} toggle={toggle(i)} />
-              ))} */}
               {players.map((player, i) => (
-                // <Typography variant="subtitle1">{player}</Typography>
                 <Player key={i} player={player} toggle={toggle(i)} />
-              ))}
-            </Box>
-            <Box>
-              {songsList.map(({ title, source, artwork }, i) => (
-                <Typography variant="subtitle1">{artwork}</Typography>
-                // <Player key={i} />
               ))}
             </Box>
           </CardContent>

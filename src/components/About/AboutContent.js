@@ -9,7 +9,7 @@ import {
   Avatar,
 } from "@material-ui/core";
 
-import avatar1 from "../../assets/gale.jpeg";
+import avatar1 from "../../assets/gale.jpg";
 
 const useStyles = makeStyles((theme) => ({
   gridItem: {

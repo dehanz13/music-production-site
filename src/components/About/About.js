@@ -11,7 +11,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 
 import BackgroundImage from "../../assets/netherlands.jpg";
-import avatar1 from "../../assets/gale.jpeg";
+import avatar1 from "../../assets/gale.jpg";
 import AboutContent from "./AboutContent";
 
 const useStyles = makeStyles((theme) => ({

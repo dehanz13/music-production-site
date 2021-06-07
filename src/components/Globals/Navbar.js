@@ -25,7 +25,7 @@ import {
   Menu,
 } from "@material-ui/icons";
 
-import avatar from "../../assets/gale.jpeg";
+import avatar from "../../assets/gale.jpg";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {

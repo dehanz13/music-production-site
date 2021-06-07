@@ -5,7 +5,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 // import { Link as Scroll } from "react-scroll";
 import { KeyboardArrowUp } from "@material-ui/icons";
 
-import avatar from "../../assets/gale.jpeg";
+import avatar from "../../assets/gale.jpg";
 import BackgroundImage from "../../assets/production1.jpg";
 import HeroContent from "./HeroContent";
 import Youtube from "../Youtube";
