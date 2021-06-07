@@ -36,6 +36,15 @@ const useStyles = makeStyles((theme) => ({
   videoContainer: {
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
+    alignContent: "center",
+    margin: "0 auto",
+  },
+  gridItem: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
   },
 }));
 const Youtube = () => {
@@ -56,15 +65,42 @@ const Youtube = () => {
   };
 
   return (
-    <div className={classes.videoContainer}>
-      <YouTube
-        videoId="fl2keFYTLKQ"
-        opts={opts}
-        onReady={videoOnReady}
-        containerClassName={"youtubeContainer"}
-        onPlay={videoOnPlay}
-      />
-    </div>
+    <Grid container className={classes.gridItem}>
+      <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+        <YouTube
+          videoId="fl2keFYTLKQ"
+          opts={opts}
+          onReady={videoOnReady}
+          containerClassName={"youtubeContainer"}
+          onPlay={videoOnPlay}
+        />
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+        <YouTube
+          videoId="titrtoQIU2Y"
+          opts={opts}
+          onReady={videoOnReady}
+          containerClassName={"youtubeContainer"}
+          onPlay={videoOnPlay}
+        />
+      </Grid>
+    </Grid>
+    // <div className={classes.videoContainer}>
+    // <YouTube
+    //   videoId="fl2keFYTLKQ"
+    //   opts={opts}
+    //   onReady={videoOnReady}
+    //   containerClassName={"youtubeContainer"}
+    //   onPlay={videoOnPlay}
+    // />
+    // <YouTube
+    //   videoId="titrtoQIU2Y"
+    //   opts={opts}
+    //   onReady={videoOnReady}
+    //   containerClassName={"youtubeContainer"}
+    //   onPlay={videoOnPlay}
+    // />
+    // </div>
   );
 };
 

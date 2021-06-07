@@ -7,12 +7,7 @@ import {
   Box,
   Container,
 } from "@material-ui/core";
-import {
-  makeStyles,
-  createMuiTheme,
-  withStyles,
-  ThemeProvider,
-} from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 import { grey, purple } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme) => ({
@@ -26,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonStyle: {
     // margin: theme.spacing(1),
-    textTransform: "uppecase",
+    textTransform: "uppercase",
     maxWidth: "120px",
     maxHeight: "40px",
     minWidth: "50px",

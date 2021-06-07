@@ -9,10 +9,10 @@ import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#f00",
+      main: "#000000",
     },
     secondary: {
-      main: "#0f0",
+      main: "#000000",
     },
   },
   typography: {
@@ -68,7 +68,10 @@ const theme = createMuiTheme({
     MuiTextField: {
       variant: "outlined",
       InputLabelProps: {
-        shrink: true,
+        // shrink: true,
+      },
+      fullWidth: {
+        maxWidth: "300px",
       },
     },
     MuiPaper: {

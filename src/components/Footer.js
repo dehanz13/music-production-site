@@ -19,7 +19,7 @@ const Footer = () => {
       >
         <Container maxWidth="lg">
           <Grid container>
-            <Grid item xs>
+            <Grid item xs={12}>
               <Newsletter />
             </Grid>
           </Grid>
