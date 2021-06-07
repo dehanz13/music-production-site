@@ -1,18 +1,9 @@
 import React from "react";
-import {
-  Paper,
-  Typography,
-  Box,
-  Container,
-  Grid,
-  Avatar,
-  Backdrop,
-} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { Paper, Typography, Box, Container, Grid } from "@material-ui/core";
 
-import BackgroundImage from "../assets/netherlands.jpg";
-import avatar1 from "../assets/gale.jpeg";
-import AboutContent from "./AboutContent";
+import YouTube from "../Youtube";
+import BackgroundImage from "../../assets/production4.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,11 +31,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
     textAlign: "center",
-    padding: 50,
+    padding: 20,
   },
 }));
 
-const About = () => {
+const Media = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -55,11 +46,11 @@ const About = () => {
         justify="center"
         className={classes.title}
       >
-        About Me
+        Media
       </Typography>
-      <AboutContent />
+      <YouTube />
     </div>
   );
 };
 
-export default About;
+export default Media;

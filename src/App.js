@@ -1,24 +1,15 @@
 import React from "react";
-import {
-  TextField,
-  Typography,
-  Button,
-  Grid,
-  Box,
-  CssBaseline,
-  Container,
-} from "@material-ui/core";
+import { CssBaseline } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { Route, Switch } from "react-router-dom";
 
-import logo from "./logo.svg";
 import Home from "./components";
-import About from "./components/About";
-import News from "./components/News";
-import Lyrics from "./components/Lyrics";
-import Music from "./components/Music";
-import Media from "./components/Media";
-import Contact from "./components/Contact";
+import About from "./components/About/About";
+import News from "./components/News/News";
+import Lyrics from "./components/Lyrics/Lyrics";
+import Music from "./components/Music/Music";
+import Media from "./components/Media/Media";
+import Contact from "./components/Contact/Contact";
 import Layout from "./components/layout";
 // import './App.css';
 import "./index.css";

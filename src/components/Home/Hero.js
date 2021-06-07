@@ -9,7 +9,7 @@ import avatar from "../../assets/gale.jpeg";
 import BackgroundImage from "../../assets/production1.jpg";
 import HeroContent from "./HeroContent";
 import Youtube from "../Youtube";
-import Newsletter from "../Newsletter";
+import Newsletter from "../Globals/Newsletter";
 
 const useStyles = makeStyles((theme) => ({
   root: {

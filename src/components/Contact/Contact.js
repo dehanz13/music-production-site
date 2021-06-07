@@ -16,8 +16,8 @@ import {
   Avatar,
 } from "@material-ui/core";
 
-import AvatarImg from "../assets/gale2.jpeg";
-import BackgroundImage from "../assets/production2.jpg";
+import AvatarImg from "../../assets/gale2.jpeg";
+import BackgroundImage from "../../assets/production2.jpg";
 
 const useStyles = makeStyles((theme) => ({
   formContainer: {
