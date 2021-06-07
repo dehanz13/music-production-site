@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     textAlign: "center",
   },
-  title1: {
+  title: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -53,7 +53,7 @@ const About = () => {
         variant="h2"
         component="div"
         justify="center"
-        className={classes.title1}
+        className={classes.title}
       >
         About Me
       </Typography>
