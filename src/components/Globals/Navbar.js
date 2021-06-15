@@ -91,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const navbarItems = [
-  { listText: "Home", listPath: "/" },
+  // { listText: "Home", listPath: "/" },
   { listText: "About", listPath: "/about" },
   { listText: "News", listPath: "/news" },
   { listText: "Features", listPath: "/features" },
