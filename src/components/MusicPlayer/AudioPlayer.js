@@ -15,6 +15,7 @@ import {
   IconButton,
   Paper,
   Avatar,
+  Slider,
 } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
@@ -38,6 +39,7 @@ import RepeatOneIcon from "@material-ui/icons/RepeatOne";
 // import song2 from "../../assets/songs/Edge.mp3";
 // import song3 from "../../assets/songs/Fractures.mp3";
 import { songsArr } from "../../context/songs";
+// import Playlist from "./Playlist";
 
 const useStyles = makeStyles((theme) => ({
   paperContainer: {
@@ -74,6 +76,8 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     maxWidth: 345,
+    paddingBottom: 20,
+    margin: theme.spacing(10),
   },
   media: {
     height: 0,
@@ -106,6 +110,10 @@ const useStyles = makeStyles((theme) => ({
   },
   nextPrevButton: {
     fontSize: 40,
+  },
+  rootSlider: {
+    width: 200,
+    margin: "0 auto",
   },
 }));
 
@@ -183,6 +191,11 @@ const useMultiAudio = (urls) => {
 
 const Player = ({ player, toggle }) => {
   const classes = useStyles();
+  const [value, setValue] = React.useState(30);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
   return (
     <Card className={classes.root}>
       <CardHeader
@@ -191,10 +204,7 @@ const Player = ({ player, toggle }) => {
             src={player.artist}
             aria-label="song title"
             className={classes.avatar}
-            // style={{ backgroundImage: `url(${player.artist})` }}
-          >
-            {/* <img src={player.artist} /> */}
-          </Avatar>
+          ></Avatar>
         }
         action={
           <IconButton aria-label="favorite">
@@ -240,6 +250,23 @@ const Player = ({ player, toggle }) => {
           <RepeatIcon className={classes.sidebutton} />
         </IconButton>
       </CardActions>
+      <div className={classes.rootSlider}>
+        <Grid container spacing={2} className={classes.playbarContainer}>
+          <Grid item>
+            <VolumeDownIcon />
+          </Grid>
+          <Grid item xs>
+            <Slider
+              value={value}
+              onChange={handleChange}
+              aria-labelledby="continuous-slider"
+            />
+          </Grid>
+          <Grid item>
+            <VolumeUpIcon />
+          </Grid>
+        </Grid>
+      </div>
     </Card>
   );
 };
@@ -258,7 +285,7 @@ const AudioPlayer = () => {
             </Box>
             <Box>
               {players.map((player, i) => (
-                <Player key={i} player={player} toggle={toggle(i)} />
+                <Player key={i} player={player} toggle={toggle(i)} p={10} />
               ))}
             </Box>
           </CardContent>

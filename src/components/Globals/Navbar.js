@@ -94,9 +94,12 @@ const navbarItems = [
   { listText: "Home", listPath: "/" },
   { listText: "About", listPath: "/about" },
   { listText: "News", listPath: "/news" },
-  { listText: "Lyrics", listPath: "/lyrics" },
-  { listText: "Music", listPath: "/music" },
-  { listText: "Media", listPath: "/media" },
+  { listText: "Features", listPath: "/features" },
+  { listText: "Events", listPath: "/events" },
+  { listText: "Releases", listPath: "/Releases" },
+  { listText: "Artists", listPath: "/artists" },
+  { listText: "Videos", listPath: "/videos" },
+  { listText: "Mixes", listPath: "/mixes" },
   { listText: "Contact", listPath: "/contact" },
 ];
 
@@ -109,7 +112,7 @@ const Navbar = () => {
       <AppBar position="fixed sticky" className={classes.appbar} elevation={12}>
         <Toolbar className={classes.appbarWrapper}>
           <Link className={classes.appbarTitle} to="/">
-            <h1 className={classes.colorText}>GN.</h1>
+            <h1 className={classes.colorText}>GB Productions.</h1>
           </Link>
           {/* <Container className={classes.navDisplayFlex}> */}
           <List

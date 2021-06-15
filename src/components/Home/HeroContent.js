@@ -52,7 +52,7 @@ const HeroContent = () => {
             // bgcolor="#000000"
             // m="auto"
           >
-            <h1 className={classes.titleText}>Gale Nanlohy</h1>
+            <h1 className={classes.titleText}>Gale Bertrand Productions</h1>
           </Box>
         </Grid>
       </Grid>

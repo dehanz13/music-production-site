@@ -6,9 +6,13 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./components";
 import About from "./components/About/About";
 import News from "./components/News/News";
-import Lyrics from "./components/Lyrics/Lyrics";
+import Features from "./components/Features/Features";
+import Events from "./components/Events/Events";
+import Releases from "./components/Releases/Releases";
+import Mixes from "./components/Mixes/Mixes";
+import Artists from "./components/Artists/Artists";
 import Music from "./components/Music/Music";
-import Media from "./components/Media/Media";
+import Videos from "./components/Videos/Videos";
 import Contact from "./components/Contact/Contact";
 import Layout from "./components/layout";
 // import './App.css';
@@ -39,9 +43,13 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/news" component={News} />
-            <Route exact path="/lyrics" component={Lyrics} />
+            <Route exact path="/features" component={Features} />
+            <Route exact path="/events" component={Events} />
+            <Route exact path="/artists" component={Artists} />
+            <Route exact path="/releases" component={Releases} />
+            <Route exact path="/mixes" component={Mixes} />
             <Route exact path="/music" component={Music} />
-            <Route exact path="/media" component={Media} />
+            <Route exact path="/videos" component={Videos} />
             <Route exact path="/contact" component={Contact} />
           </Switch>
         </Layout>
