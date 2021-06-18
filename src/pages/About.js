@@ -9,10 +9,11 @@ import {
   Backdrop,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import ReactMarkdown from "react-markdown";
 
-import BackgroundImage from "../../assets/netherlands.jpg";
-import avatar1 from "../../assets/gale.jpg";
-import AboutContent from "./AboutContent";
+import BackgroundImage from "../assets/netherlands.jpg";
+import AboutContent from "../components/About/AboutContent";
+import aboutText from "../pages.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -55,9 +56,10 @@ const About = () => {
         justify="center"
         className={classes.title}
       >
-        About Me
+        About Gale Bertrand Productions
       </Typography>
-      <AboutContent />
+      <ReactMarkdown children={aboutText[0].content} skipHtml={false} />
+      {/* <AboutContent /> */}
     </div>
   );
 };

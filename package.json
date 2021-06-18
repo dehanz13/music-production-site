@@ -23,6 +23,7 @@
     "react-scripts": "^4.0.3",
     "react-youtube": "^7.13.1",
     "redux": "^4.1.0",
+    "typeface-raleway": "^1.1.13",
     "uuid": "^8.3.2",
     "web-vitals": "^1.0.1"
   },

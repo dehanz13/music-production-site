@@ -2,18 +2,15 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Typography, Box, Container, Grid } from "@material-ui/core";
 
-import Postlist from "../postlist";
-
 const useStyles = makeStyles((theme) => ({}));
 
-const Features = () => {
+const NotFoundPage = () => {
   const classes = useStyles();
   return (
     <div>
-      <h1>Features PAGE</h1>
-      <Postlist />
+      <h1>The page you are looking for doesn't exist :(</h1>
     </div>
   );
 };
 
-export default Features;
+export default NotFoundPage;
